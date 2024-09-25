@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SİPARİŞ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0e7ff; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .order-form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .order-form {
+            background-color: #ffffff;
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 400px; 
+            max-width: 100%;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .order-form:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: #4b79a1;
+            margin-bottom: 15px; 
+            font-size: 1.5rem; 
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 95%;
+            padding: 10px; 
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px; 
+            font-size: 0.9rem; 
+            transition: border 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #4b79a1;
+            outline: none;
+            box-shadow: 0 0 6px rgba(75, 121, 161, 0.2);
+        }
+
+        textarea {
+            resize: none;
+            height: 100px; 
+        }
+
+        button {
+            width: 100%;
+            padding: 10px; 
+            background-color: #4b79a1;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem; 
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #283e51;
+        }
+
+        h4 {
+            text-align: center;
+            margin-top: 10px;
+            color: #f34040;
+            font-size: 0.85rem; 
+        }
+
+        @media (max-width: 768px) {
+            .order-form {
+                width: 90%; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="order-form-container">
+        <div class="logo-container">
+            <img src="image/Profil.png" alt="Logo">
+        </div>
+
+        <div class="order-form">
+            <h2>SİPARİŞ FORMU</h2>
+            <form id="orderForm" onsubmit="sendEmail(); return false;">
+                <label for="name">İsim:</label>
+                <input type="text" id="name" placeholder="İsminizi yazın" required>
+
+                <label for="designType">Hizmet Türü:</label>
+                <input type="text" id="designType" placeholder="Logo, Banner, Website vb." required>
+
+                <label for="purpose">Tasarım Nerede Kullanılacak:</label>
+                <input type="text" id="purpose" placeholder="Tasarımın nerede kullanılacağını belirtin" required>
+
+                <label for="details">Tasarım Detayları:</label>
+                <textarea id="details" placeholder="Tasarım hakkında isteklerinizi detaylıca anlatın" required></textarea>
+
+                <button type="submit">Sipariş Mesajını Gönder</button>
+            </form>
+            <h4>Ücreti yollamanız ve siparişe başlamak için size mail üzerinden dönüş yapacağım.</h4>
+        </div>
+    </div>
+
+    <script>
+        function sendEmail() {
+            var name = document.getElementById('name').value;
+            var designType = document.getElementById('designType').value;
+            var purpose = document.getElementById('purpose').value;
+            var details = document.getElementById('details').value;
+
+            var subject = encodeURIComponent('Yeni Sipariş isteği: ' + name);
+            var body = encodeURIComponent(
+                "İsim: " + name + "\n" +
+                "Tasarım Türü: " + designType + "\n" +
+                "Tasarım Amacı: " + purpose + "\n" +
+                "Tasarım Detayları: " + details
+            );
+
+            var mailtoLink = "mailto:ekicienes06@gmail.com?subject=" + subject + "&body=" + body;
+            window.location.href = mailtoLink;
+        }
+    </script>
+
+</body>
+</html>

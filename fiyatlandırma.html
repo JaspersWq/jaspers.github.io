@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiyatlandırma</title>
+
+    <header>
+        <a href="bilgiler.html">
+        <img src="image/Profil.png" alt="Logo" width="120" height="120"> 
+        </a>
+    </header>
+    <style>
+        img {
+            border-radius: 50%;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+       
+        .pricing-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px; 
+        }
+
+        .pricing-box {
+            background-color: #ffffff;
+            margin: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 600px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-box:hover {
+            transform: translateY(-10px); 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-box h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .pricing-box p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 36px;
+            font-weight: bold;
+            color: #009688;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #009688;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #405e5a;
+        }
+
+        h3 {
+            text-align: center;
+            color: #f76262;
+            margin: -20px 0 40px;           
+        }
+    </style>
+</head>
+<body>
+    <h1>FİYATLANDIRMA VE SATIŞ</h1>
+    <h3>Fiyatlar ortlamadır. İsteklerinize göre azalır veya artar.</h3>
+
+    <div class="pricing-container">
+        
+        <div class="pricing-box">
+            <h2>Logo Tasarımı</h2>
+            <p>Şirketiniz veya kişisel olmak üzere kaliteli logo tasarlıyorum. Logonuz isteklerinize göre yapılmaktadır.
+            Sipariş vererek benimle iletişime geçebilir ve sorularınızı sorabilirsiniz. Markanızı güçlendirin! </p>
+            <div class="price">₺600</div>
+            <a href="sipariş.html" class="cta-button">Sipariş Ver</a>
+        </div>
+
+        
+        <div class="pricing-box">
+            <h2>Banner & Sosyal Medya</h2>
+            <p>Sosyal medya hesaplarınız ve youtube, twitch için dikkat çekici bannerlar, header  ve afişler tasarlayabilirim.
+            Sipariş vererek benimle iletişime geçebilir ve sorularınızı sorabilirsiniz. Markanızı güçlendirin!
+            </p>
+            <div class="price">₺400</div>
+            <a href="sipariş.html" class="cta-button">Sipariş Ver</a>
+        </div>
+
+       
+        <div class="pricing-box">
+            <h2>Fotoğraf Rötuş</h2>
+            <p>Fotoğraflarınızda istenilen düzenlemeleri yapıyor, effect uyguluyor ve profesyonel rötuş hizmeti sağlıyorum.
+            Sipariş vererek benimle iletişime geçebilir ve sorularınızı sorabilirsiniz.</p>
+            <div class="price">₺100-200</div>
+            <a href="sipariş.html" class="cta-button">Sipariş Ver</a>
+        </div>
+
+
+        <div class="pricing-box">
+            <h2>Manipülasyon Tasarımları</h2>
+            <p>Görseller ile çeşitli profesyonel manipülasyon tasarımları yaparım.
+            Sipariş vererek benimle iletişime geçebilir ve sorularınızı sorabilirsiniz. Fotoğraflarınızda sihirli dokunuşlar istemez misiniz?</p>
+            <div class="price">₺800-1700</div>
+            <a href="sipariş.html" class="cta-button">Sipariş Ver</a>
+        </div>
+
+        <div class="pricing-box">
+            <h2>Web Geliştirme Hizmeti</h2>
+            <p>Kişisel web site hizmeti sunarım. 3 sayfalık bir site fiyatı 1000₺ dir.
+            Sipariş vererek benimle iletişime geçebilir ve sorularınızı sorabilirsiniz. </p>
+            <div class="price">₺1000-2000</div>
+            <a href="sipariş.html" class="cta-button">Sipariş Ver</a>
+    </div>
+</body>
+</html>

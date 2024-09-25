@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #1e1e1e;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        h1 {
+            font: 700 50px 'Roboto', sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;          
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: auto;
+        }
+        img {
+            color: #fff;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let mouse = { x: 0, y: 0 };
+        let lastMouse = { x: 0, y: 0 };
+
+        const particles = [];
+
+        
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 5 + 2;
+                this.color = 'rgba(120, 150, 255, 0.8)';
+                this.velocityX = (Math.random() - 0.5) * 2;
+                this.velocityY = (Math.random() - 0.5) * 5;
+                this.life = 200;
+            }
+
+            update() {
+                this.x += this.velocityX;
+                this.y += this.velocityY;
+                this.life -= 1;
+                if (this.life <= 0) {
+                    particles.splice(particles.indexOf(this), 1);
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 4);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        function createParticle(x, y) {
+            particles.push(new Particle(x, y));
+        }
+
+        function updateParticles() {
+            particles.forEach((particle) => {
+                particle.update();
+                particle.draw();
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            updateParticles();
+            requestAnimationFrame(animate);
+        }
+
+        canvas.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+
+            createParticle(mouse.x, mouse.y);
+        });
+
+        
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        animate();
+    </script>
+    
+    <h1>Developer By JaspersArt</h1>
+    
+</body>
+</html>

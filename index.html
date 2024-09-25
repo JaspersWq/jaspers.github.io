@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            opacity: 0;
+            animation: fadein 2s ease-in-out forwards; /* animasyon */
+        }
+
+        header {
+            background: linear-gradient(45deg, #4b79a1, #283e51);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        header h1 {
+            flex-grow: 1;
+            margin-right: 130px;
+        }
+
+        nav {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .main-image {
+            margin: 50px auto;
+            width: 70%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tagline {
+            font-size: 2rem;
+            margin: 30px 0;
+            color: #4b79a1;
+        }
+
+        .cta-button {
+            text-decoration: none;
+            padding: 15px 40px;
+            background-color: #4b79a1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;           
+        }
+
+        .cta-button:hover {
+            background-color: #283e51;
+        }
+
+        footer {
+            background-color: #283e51;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .main-image {
+                width: 90%;
+            }
+
+            .tagline {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 20px 40px;
+            }
+        }
+
+        h2 {
+            margin-right: -5px;
+            font-size: 50px;
+            color: #4f81ad;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="yapımcılar.html" target="_blank">
+            <img src="https://r.resimlink.com/uH4Dg8pvTi.png" alt="Şirket Logosu" class="logo">
+        </a>
+        <h1>WELCOME TO MY WEBSITE</h1> 
+    </header>
+
+    <div class="container">
+        <h2>JaspersArt</h2>
+        <img src="TASARIM/bionluks.png" alt="Ana Görsel" class="main-image">
+        <p class="tagline">Size en güzel hizmeti sunmak için buradayım!</p>
+        <a href="bilgiler.html" class="cta-button">Beni Tanıyın</a>
+    </div>
+
+    <footer>
+        <a href="yapımcılar.html" target="_blank">
+        <p>🖥️ Developer by JaspersArt</p>
+        </a>
+        <p>&copy; 2024 JaspersArt. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>
