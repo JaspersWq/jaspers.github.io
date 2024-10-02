@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f0f0f0;
@@ -27,15 +26,17 @@
         }
 
         .gallery-container {
-            width: 1200px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px;
         }
 
         .gallery-container img {
-            width: 50%; 
+            width: 100%; 
             height: auto; 
-            margin-bottom: 20px; 
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -46,14 +47,22 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; 
-            pointer-events: none; 
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 30px;
+                letter-spacing: 2px;
+            }
+
+            .gallery-container {
+                padding: 10px; 
+            }
         }
     </style>
 </head>
@@ -63,49 +72,50 @@
 
     <center>
         <div class="gallery-container">
-        <img src="TASARIM/bionluks.png" alt="Tasarım 1">
-        <img src="TASARIM/T-bg2.png" alt="Tasarım">
-        <img src="TASARIM/titanyumBG.png" alt="Tasarım">
-        <img src="TASARIM/1 (2).png" alt="Tasarım 2">
-        <img src="TASARIM/2.png" alt="Tasarım 3">
-        <img src="TASARIM/3.png" alt="Tasarım 4">
-        <img src="TASARIM/4.png" alt="Tasarım 5">
-        <img src="TASARIM/5.png" alt="Tasarım 6">
-        <img src="TASARIM/6.png" alt="Tasarım 7">
-        <img src="TASARIM/7.png" alt="Tasarım 8">
-        <img src="TASARIM/8.png" alt="Tasarım 9">
-        <img src="TASARIM/9.png" alt="Tasarım 10">
-        <img src="TASARIM/10.png" alt="Tasarım 11">
-        <img src="TASARIM/11.png" alt="Tasarım 12">
-        <img src="TASARIM/12.png" alt="Tasarım 13">
-        <img src="TASARIM/13.png" alt="Tasarım 14">
-        <img src="TASARIM/14.png" alt="Tasarım 15">
-        <img src="TASARIM/15.png" alt="Tasarım 16">
-        <img src="TASARIM/16.png" alt="Tasarım 17">
-        <img src="TASARIM/17.png" alt="Tasarım 18">
-        <img src="TASARIM/18.png" alt="Tasarım 19">
-        <img src="TASARIM/19.png" alt="Tasarım 20">
-        <img src="TASARIM/20.png" alt="Tasarım 21">
-        <img src="TASARIM/21.png" alt="Tasarım 22">
-        <img src="TASARIM/1a5.png" alt="Tasarım ekstra">
-        <img src="TASARIM/22.png" alt="Tasarım 23">
-        <img src="TASARIM/23.png" alt="Tasarım 24">
-        <img src="TASARIM/24.png" alt="Tasarım 25">
-        <img src="TASARIM/25.png" alt="Tasarım 26">
-        <img src="TASARIM/26.png" alt="Tasarım 27">
-        <img src="TASARIM/27.png" alt="Tasarım 28">
-        <img src="TASARIM/28.png" alt="Tasarım 29">
-        <img src="TASARIM/29.png" alt="Tasarım 30">
-        <img src="TASARIM/30.png" alt="Tasarım 31">
-        <img src="TASARIM/31.png" alt="Tasarım 32">
-        <img src="TASARIM/32.png" alt="Tasarım 33">
-        <img src="TASARIM/33.png" alt="Tasarım 34">
-        <img src="TASARIM/34.png" alt="Tasarım 35">
-        <img src="TASARIM/35.png" alt="Tasarım 36">
-        <img src="TASARIM/36.png" alt="Tasarım 37">
-        <img src="TASARIM/HOPES.png" alt="Tasarım 38">
+            <img src="TASARIM/bionluks.png" alt="Tasarım 1">
+            <img src="TASARIM/T-bg2.png" alt="Tasarım">
+            <img src="TASARIM/titanyumBG.png" alt="Tasarım">
+            <img src="TASARIM/1 (2).png" alt="Tasarım 2">
+            <img src="TASARIM/2.png" alt="Tasarım 3">
+            <img src="TASARIM/3.png" alt="Tasarım 4">
+            <img src="TASARIM/4.png" alt="Tasarım 5">
+            <img src="TASARIM/5.png" alt="Tasarım 6">
+            <img src="TASARIM/6.png" alt="Tasarım 7">
+            <img src="TASARIM/7.png" alt="Tasarım 8">
+            <img src="TASARIM/8.png" alt="Tasarım 9">
+            <img src="TASARIM/9.png" alt="Tasarım 10">
+            <img src="TASARIM/10.png" alt="Tasarım 11">
+            <img src="TASARIM/11.png" alt="Tasarım 12">
+            <img src="TASARIM/12.png" alt="Tasarım 13">
+            <img src="TASARIM/13.png" alt="Tasarım 14">
+            <img src="TASARIM/14.png" alt="Tasarım 15">
+            <img src="TASARIM/15.png" alt="Tasarım 16">
+            <img src="TASARIM/16.png" alt="Tasarım 17">
+            <img src="TASARIM/17.png" alt="Tasarım 18">
+            <img src="TASARIM/18.png" alt="Tasarım 19">
+            <img src="TASARIM/19.png" alt="Tasarım 20">
+            <img src="TASARIM/20.png" alt="Tasarım 21">
+            <img src="TASARIM/21.png" alt="Tasarım 22">
+            <img src="TASARIM/1a5.png" alt="Tasarım ekstra">
+            <img src="TASARIM/22.png" alt="Tasarım 23">
+            <img src="TASARIM/23.png" alt="Tasarım 24">
+            <img src="TASARIM/24.png" alt="Tasarım 25">
+            <img src="TASARIM/25.png" alt="Tasarım 26">
+            <img src="TASARIM/26.png" alt="Tasarım 27">
+            <img src="TASARIM/27.png" alt="Tasarım 28">
+            <img src="TASARIM/28.png" alt="Tasarım 29">
+            <img src="TASARIM/29.png" alt="Tasarım 30">
+            <img src="TASARIM/30.png" alt="Tasarım 31">
+            <img src="TASARIM/31.png" alt="Tasarım 32">
+            <img src="TASARIM/32.png" alt="Tasarım 33">
+            <img src="TASARIM/33.png" alt="Tasarım 34">
+            <img src="TASARIM/34.png" alt="Tasarım 35">
+            <img src="TASARIM/35.png" alt="Tasarım 36">
+            <img src="TASARIM/36.png" alt="Tasarım 37">
+            <img src="TASARIM/HOPES.png" alt="Tasarım 37">
         </div>
     </center>
 </body>
 </html>
+
 
