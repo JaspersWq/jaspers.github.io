@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shortcut icon" type="image/png" href="image/İMZALOGOO1.png">
     <style>
         * {
@@ -62,6 +63,50 @@
         nav a:hover {
             background-color: rgba(255, 255, 255, 0.3);
             border-radius: 5px;
+        }
+
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            font-size: 2rem;
+            color: white;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        .hamburger:hover {
+            transform: scale(1.2);
+            color: rgb(192, 192, 192);
+        }
+
+    
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background-color: #283e51;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav-links a {
+            padding: 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-links.open {
+            display: flex;
         }
 
         .container {
@@ -154,6 +199,13 @@
                 font-size: 1rem;
                 padding: 20px 40px;
             }
+            
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+            }
         }
 
         h2 {
@@ -177,6 +229,7 @@
             text-decoration: none;
             color: #fff;
         }
+        
     </style>
 </head>
 <body>
@@ -185,6 +238,21 @@
             <img src="https://r.resimlink.com/uH4Dg8pvTi.png" alt="Şirket Logosu" class="logo">
         </a>
         <h1>WELCOME TO MY WEBSITE</h1> 
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav>
+            <div class="nav-links">
+                <a href="bilgiler.html">Ana Sayfa</a>
+                <a href="bilgiler.html#hakkimizda">Hizmetler</a>
+                <a href="bilgiler.html#iletisim">İletişim</a>
+                <a href="tasarımlar.html">Tasarımlarım</a>
+                <a href="sosyal.html">Sosyal Medyalarım</a>
+                <a href="fiyatlandırma.html">Fiyat & Satış</a>
+            </div>
+        </nav>
     </header>
 
     <div class="container">
@@ -200,5 +268,11 @@
         </a>
         <p>&copy; 2024 JaspersArt. Tüm hakları saklıdır.</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
