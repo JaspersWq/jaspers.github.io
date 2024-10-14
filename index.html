@@ -25,7 +25,7 @@
         }
 
         header {
-            background: linear-gradient(45deg, #4b79a1, #283e51);
+            background-color: #e0e0e0;
             color: #fff;
             padding: 20px 0;
             text-align: center;
@@ -44,8 +44,10 @@
         }
 
         header h1 {
+            font: 35px verdana;
             flex-grow: 1;
             margin-right: 130px;
+            color: rgb(63, 62, 62);
         }
 
         nav {
@@ -69,7 +71,7 @@
             display: block;
             cursor: pointer;
             font-size: 2rem;
-            color: white;
+            color: rgb(63, 62, 62);
             position: absolute;
             right: 20px;
             top: 20px;
@@ -77,13 +79,13 @@
 
         .hamburger:hover {
             transform: scale(1.2);
-            color: rgb(192, 192, 192);
+            color: rgb(117, 161, 172);
         }
 
         .nav-links {
             display: none;
             flex-direction: column;
-            background-color: #283e51;
+            background-color: #6c869b;
             position: absolute;
             top: 60px;
             right: 0;
@@ -107,7 +109,6 @@
 
         .nav-links.open {
             display: flex;
-            
         }
 
         .container {
@@ -167,14 +168,15 @@
         }
 
         footer {
-            background-color: #283e51;
-            color: #fff;
+            background-color: #e0e0e0;
+            color: rgb(63, 62, 62);
             padding: 20px 0;
             text-align: center;
         }
 
         footer p {
             margin: 10px 0;
+            color: rgb(63, 62, 62);
         }
 
         @media (max-width: 768px) {
@@ -195,12 +197,6 @@
             }
         }
 
-        h2 {
-            margin-right: -5px;
-            font-size: 50px;
-            color: #4f81ad;
-            font-family: 'Roboto', sans-serif;
-        }
 
         .slider {
             display: flex;
@@ -209,6 +205,7 @@
             border-radius: 15px;
             margin: 50px auto;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .slider-wrapper {
@@ -223,7 +220,6 @@
             height: auto;
         }
 
-        /* Siktuminin slideri işte :D */
         @keyframes slide {
             0% { transform: translateX(0); }
             20% { transform: translateX(0); }
@@ -249,12 +245,32 @@
             text-decoration: none;
             color: #fff;
         }
+
+        .slider-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            background-color: #bbb;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .indicator.active {
+            background-color: #4b79a1; 
+        }
     </style>
 </head>
 <body>
     <header>
         <a href="bilgiler.html" target="_blank">
-            <img src="https://r.resimlink.com/uH4Dg8pvTi.png" alt="Şirket Logosu" class="logo">
+            <img src="image/logoBlack.png" alt="Şirket Logosu" class="logo">
         </a>
         <h1>WELCOME TO MY WEBSITE</h1> 
 
@@ -264,31 +280,33 @@
 
         <nav>
             <div class="nav-links">
-                <a href="bilgiler.html">Ana Sayfa</a>
-                <a href="bilgiler.html#hakkimizda">Hizmetler</a>
-                <a href="bilgiler.html#iletisim">İletişim</a>
-                <a href="tasarımlar.html">Tasarımlarım</a>
-                <a href="sosyal.html">Sosyal Medyalarım</a>
-                <a href="fiyatlandırma.html">Fiyat & Satış</a>
+                <a href="bilgiler.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+                <a href="bilgiler.html#hakkimizda"><i class="fas fa-cog"></i> Hizmetler</a>
+                <a href="bilgiler.html#iletisim"><i class="fas fa-envelope"></i> İletişim</a>
+                <a href="tasarımlar.html"><i class="fas fa-palette"></i> Tasarımlarım</a>
+                <a href="sosyal.html"><i class="fas fa-share-alt"></i> Sosyal Medyalarım</a>
+                <a href="fiyatlandırma.html"><i class="fas fa-dollar-sign"></i> Fiyat & Satış</a>
             </div>
         </nav>
     </header>
 
     <div class="container">
-        <h2>JaspersArt</h2>
         
         <div class="slider">
             <div class="slider-wrapper">
-                <img src="image/mavi.png" alt="Ana Görsel">
-                <img src="image/kırmızı.png" alt="2">
-                <img src="image/design.png" alt="3">
-                <img src="image/skull.png" alt="4">
-            </div>
+                <img src="image/img1.png" alt="Ana Görsel">
+                <img src="image/img2.png" alt="2">
+                <img src="image/img3.png" alt="3">
+                <img src="image/img4.png" alt="4">
+            </div>           
         </div>
+
+        
 
         <p class="tagline">Size en güzel hizmeti sunmak için buradayım!</p>
         <a href="bilgiler.html" class="button">Beni Tanıyın</a>
     </div>
+    
 
     <footer>
         <a href="yapımcılar.html" target="_blank">
@@ -296,7 +314,13 @@
         </a>
         <p>&copy; 2024 JaspersArt. Tüm hakları saklıdır.</p>
     </footer>
-    <script>
+    <script>  
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('open');
+        }
+
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('open');
