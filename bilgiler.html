@@ -7,7 +7,7 @@
     <link rel="shortcut icon" type="image/png" href="image/icon.png">
     <title>Ana Sayfa</title>
 
-   <style>
+  <style>
         * {
             box-sizing: border-box;
             margin: 0;
@@ -22,7 +22,7 @@
             margin: 0;
         }
 
-            header {
+        header {
             display: flex;
             align-items: center;
             flex-direction: row;
@@ -35,7 +35,7 @@
             z-index: 900;
         }
 
-            .header-text {
+        .header-text {
             display: flex;
             flex-direction: column; 
             justify-content: center; 
@@ -58,7 +58,6 @@
             margin-top: 10px;
         }
 
-        
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem; 
@@ -73,7 +72,6 @@
                 padding: 0 10px; 
             }
         }
-
 
         .logo {
             flex-shrink: 0;
@@ -101,7 +99,6 @@
             color: rgb(117, 161, 172);
         }
 
-    
         .nav-links {
             display: none;
             flex-direction: column;
@@ -142,6 +139,14 @@
             margin: 200px 0;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         section h2 {
@@ -181,7 +186,6 @@
 </head>
 <body>
     <header>
-        
         <div class="logo">
             <a href="index.html" target="_blank">
                 <img src="image/logoBlack.png" alt="Logo">  
@@ -239,6 +243,22 @@
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', revealSections);
+
+        function revealSections() {
+            var sections = document.querySelectorAll('section');
+
+            sections.forEach(function(section) {
+                var windowHeight = window.innerHeight;
+                var elementTop = section.getBoundingClientRect().top;
+                var elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    section.classList.add('show');
+                }
+            });
         }
     </script>
 </body>
