@@ -1,93 +1,118 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shortcut icon" type="image/png" href="image/İMZALOGOO1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <title>Fiyatlandırma</title>
 
-    <header>
-        <a href="bilgiler.html">
-            <img src="image/Profil.png" alt="Logo" width="120" height="120"> 
-        </a>
-    </header>
-
     <style>
-        img {
-            border-radius: 50%;
-        }
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(45deg, #7da7c4, #75a1bd);
+            background-color: #fff;
             margin: 0;
-            padding: 20px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
+        header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+        margin-left: 30px;
+        margin-right: 30px;
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+        header img {
+            width: 100px;
+            height: auto;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 50px;
+        }
+
+        .nav-links a {
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #709ec7;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
 
         h1 {
             text-align: center;
-            color: #fdfdfd;
+            color: #333;
             margin-bottom: 40px;
+            margin-top: 100px;
         }
 
-        .pricing-container {
+        .banner-section {
             display: flex;
-            flex-direction: column;
-            gap: 30px;
+            justify-content: space-around;
+            margin: 100px 0;
         }
 
-        /* --------*/
-        .container {
-            position: relative;
-            width: 300px;
-            height: 400px;
-            background-color: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: end;
+        .banner {
+            width: 30%;
+            background-color: #ffffff;
             padding: 20px;
-            gap: 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.4s ease;
             text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
 
-        .container::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            left: -10px;
-            margin: auto;
-            width: 320px;
-            height: 420px;
-            border-radius: 14px;
-            background: linear-gradient(-45deg, #70dce4 0%, #79eeda 100%);
-            z-index: -10;
-            pointer-events: none;
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .banner h3 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #4b7ca7;
         }
 
-        .container::after {
-            content: "";
-            z-index: -1;
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(-45deg, #93f3c6 0%, #00dec0 100%);
-            transform: translate3d(0, 0, 0) scale(0.95);
-            filter: blur(30px);
+        .banner p {
+            font-size: 1rem;
+            color: #666;
         }
 
-        .container:hover::after {
-            filter: blur(40px);
+        .banner-section a{
+            text-decoration: none;
         }
 
-        .container:hover::before {
-            transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+        .banner .img1 img {
+            width: 100%;
+            height: 100%; 
+        }
+        .banner .img2 img {
+            width: 100%;
+            height: 100%; 
+        }
+        .banner .img3 img {
+            width: 100%;
+            height: 100%; 
         }
 
         .heading {
@@ -97,81 +122,158 @@
             color: rgb(255, 255, 255);
         }
 
-        .container p {
-            font-size: 18px;
-            color: white;
+        @media (max-width: 830px) {
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 2rem;
+                color: #333;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #6c869b;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                color: #fff;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 15px;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+        }
+
+        .button{
+            background-color: #39cec1;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: inline-flex;
+            
+        }
+        .button:hover{
+            background-color: #6aaca6;
+            transition: all 0.3s ease;
+        }
+        .button a{
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
         }
 
         .price {
             font-size: 36px;
             font-weight: bold;
             color: #009688;
+            padding-bottom: 10px;
         }
 
-        .cta-button {
-            background-color: #009688;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        .cta-button:hover {
-            background-color: #405e5a;
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('open');
         }
 
-        h3 {
-            text-align: center;
-            color: #a54e4b;
-            margin: -20px 0 40px;
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll("header, .banner-section, .arkarenk, .banner, h1");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach((el) => {
+            el.classList.add("fade-in");
+            observer.observe(el);
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="bilgiler.html"><img src="image/logoBlack.png" alt="logo"></a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <div class="nav-links">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="tasarımlar.html">Tasarımlarım</a>
+                <a href="sosyal.html">Sosyal Medyalarım</a>
+                <a href="fiyatlandırma.html">Fiyat & Satış</a>
+            </div>
+        </nav>
+    </header>
+
+    <h1>2025 FİYATLANDIRMA LİSTESİ</h1>
+    
+
+    <div class="banner-section">
+        
+        <div class="banner">
+            <div class="img1"><img src="image/logobrand.jpg" alt=""></div>
+            <h3>Logo Ve Kurumsal Kimlik</h3>
+            <p>Şirketiniz veya kişisel olmak üzere kaliteli logo tasarlıyorum. Logonuz isteklerinize göre yapılmaktadır.</p>
+            <div class="price">₺750 - 1000</div>
+            <div class="button">
+                <a href="sipariş.html">Sipariş Ver</a>
+            </div>
+        </div>
 
         
-
-    </style>
-</head>
-<body>
-    <h1>FİYATLANDIRMA VE SATIŞ</h1>
-    <h3>Fiyatlar ortalamadır. İsteklerinize göre azalır veya artar.</h3>
-
-    <div class="pricing-container">
-        <div class="container">
-            <h2 class="heading">Logo Tasarımı</h2>
-            <p>Şirketiniz veya kişisel olmak üzere kaliteli logo tasarlıyorum. Logonuz isteklerinize göre yapılmaktadır.</p>
-            <div class="price">₺600</div>
-            <a href="sipariş.html" class="cta-button">Sipariş Ver</a>
-        </div>
-
-        <div class="container">
-            <h2 class="heading">Banner & Sosyal Medya</h2>
+        <div class="banner">
+            <div class="img2"><img src="image/banner.jpg" alt=""></div>
+            <h3>Youtube & Twitch Banner</h3>
             <p>Sosyal medya hesaplarınız ve youtube, twitch için dikkat çekici bannerlar, header ve afişler tasarlayabilirim.</p>
-            <div class="price">₺400</div>
-            <a href="sipariş.html" class="cta-button">Sipariş Ver</a>
+            <div class="price">₺450</div>
+            <div class="button">
+                <a href="sipariş.html">Sipariş Ver</a>
+            </div>
         </div>
+       
 
-        <div class="container">
-            <h2 class="heading">Fotoğraf Rötuş</h2>
-            <p>Fotoğraflarınızda istenilen düzenlemeleri yapıyor, efekt uyguluyor ve profesyonel rötuş hizmeti sağlıyorum.</p>
-            <div class="price">₺100-200</div>
-            <a href="sipariş.html" class="cta-button">Sipariş Ver</a>
-        </div>
-
-        <div class="container">
-            <h2 class="heading">Manipülasyon Tasarımları</h2>
+        
+        <div class="banner">
+            <div class="img3"><img src="image/manipulation.jpg" alt=""></div>
+            <h3>Fotoğraf Manipülasyonları</h3>
             <p>Görseller ile çeşitli profesyonel manipülasyon tasarımları yaparım. Fotoğraflarınızda sihirli dokunuşlar istemez misiniz?</p>
-            <div class="price">₺800-1700</div>
-            <a href="sipariş.html" class="cta-button">Sipariş Ver</a>
+            <div class="price">₺900-1700</div>
+            <div class="button">
+                <a href="sipariş.html">Sipariş Ver</a>
+            </div>
         </div>
-
-        <div class="container">
-            <h2 class="heading">Web Geliştirme Hizmeti</h2>
-            <p>Kişisel web site hizmeti sunarım. <br> 3 sayfalık bir site fiyatı 1000₺'dir.</p>
-            <div class="price">₺1000-2000</div>
-            <a href="sipariş.html" class="cta-button">Sipariş Ver</a>
-        </div>
-    </div>
-    
+        
+    </div>    
 </body>
 </html>
