@@ -16,25 +16,51 @@
 
         body {
             font-family: 'Roboto', sans-serif;
+            background-color: #fff;
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
             margin: 0;
-            opacity: 0;
-            animation: fadein 2s ease-in-out forwards; /* animasyon */
         }
 
         header {
-            background-color: #e0e0e0;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            margin-left: 30px;
+            margin-right: 30px;
+            color: #fff;
+            padding: 20px;
+    }
+
+        header img {
+            width: 100px;
+            height: auto;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 50px;
+        }
+
+        .nav-links a {
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #709ec7;
+            color: #fff;
+            transition: all 0.3s ease;
         }
 
         .logo {
@@ -67,49 +93,6 @@
             border-radius: 5px;
         }
 
-        .hamburger {
-            display: block;
-            cursor: pointer;
-            font-size: 2rem;
-            color: rgb(63, 62, 62);
-            position: absolute;
-            right: 20px;
-            top: 20px;
-        }
-
-        .hamburger:hover {
-            transform: scale(1.2);
-            color: rgb(117, 161, 172);
-        }
-
-        .nav-links {
-            display: none;
-            flex-direction: column;
-            background-color: #6c869b;
-            position: absolute;
-            top: 60px;
-            right: 0;
-            width: 100%;
-            text-align: center;
-            z-index: 1000;
-        }
-
-        .nav-links a {
-            padding: 15px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .nav-links.open {
-            display: flex;
-        }
 
         .container {
             max-width: 1200px;
@@ -118,10 +101,11 @@
             text-align: center;
         }
 
-        .tagline {
+        .tagline{
             font-size: 2rem;
-            margin: 30px 0;
             color: #4b79a1;
+            overflow: hidden;
+            display: inline-block;
         }
 
         .button {
@@ -138,6 +122,7 @@
             font-weight: 600;
             line-height: normal;
             margin: 0;
+            margin-top: 50px;
             min-height: 3.75em;
             min-width: 0;
             outline: none;
@@ -168,35 +153,19 @@
         }
 
         footer {
-            background-color: #e0e0e0;
+            border-top: 1px solid #ccc;
             color: rgb(63, 62, 62);
             padding: 20px 0;
             text-align: center;
+            margin-left: 30px;
+            margin-right: 30px;
         }
 
         footer p {
             margin: 10px 0;
             color: rgb(63, 62, 62);
+            text-decoration: none;
         }
-
-        @media (max-width: 768px) {
-            .tagline {
-                font-size: 1.5rem;
-            }
-
-            .cta-button {
-                font-size: 1rem;
-                padding: 20px 40px;
-            }
-            
-            .nav-links {
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 100%;
-            }
-        }
-
 
         .slider {
             display: flex;
@@ -301,27 +270,79 @@
             font-size: 24px;
         }
 
+        @media (max-width: 833px) {
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 2rem;
+                color: #333;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                z-index: 1010;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #6c869b;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+                z-index: 1010;
+            }
+
+            .nav-links a {
+                color: #fff;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 15px;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+    }
+
+        @media (min-width: 1049px) {
+            .tagline{
+            font-size: 2rem;
+            color: #4b79a1;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            border-right: 2px solid rgba(75, 121, 161, 0.75);
+            animation: 
+                typing 4s steps(38, end) forwards, 
+                cursor 0.7s steps(2, start) infinite;
+            }
+
+            @keyframes typing {
+                from { width: 0; }
+                to { width: 100%; }
+            }
+
+            @keyframes cursor {
+                50% { border-color: transparent; }
+            }
+
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <a href="bilgiler.html" target="_blank">
-            <img src="image/logoBlack.png" alt="Şirket Logosu" class="logo">
-        </a>
-        <h1>WELCOME TO MY WEBSITE</h1> 
-
+        <img src="image/logoBlack.png" alt="logo">
         <div class="hamburger" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </div>
-
         <nav>
             <div class="nav-links">
-                <a href="bilgiler.html"><i class="fas fa-home"></i> Ana Sayfa</a>
-                <a href="bilgiler.html#hakkimizda"><i class="fas fa-cog"></i> Hizmetler</a>
-                <a href="bilgiler.html#iletisim"><i class="fas fa-envelope"></i> İletişim</a>
-                <a href="tasarımlar.html"><i class="fas fa-palette"></i> Tasarımlarım</a>
-                <a href="sosyal.html"><i class="fas fa-share-alt"></i> Sosyal Medyalarım</a>
-                <a href="fiyatlandırma.html"><i class="fas fa-dollar-sign"></i> Fiyat & Satış</a>
+                <a href="bilgiler.html">Ana Sayfa</a>
+                <a href="tasarımlar.html">Tasarımlarım</a>
+                <a href="sosyal.html">Sosyal Medyalarım</a>
+                <a href="fiyatlandırma.html">Fiyat & Satış</a>
             </div>
         </nav>
     </header>
@@ -330,17 +351,15 @@
         
         <div class="slider">
             <div class="slider-wrapper">
-                <img src="image/mavi.png" alt="Ana Görsel">
-                <img src="image/kırmızı.png" alt="2">
-                <img src="image/design.png" alt="3">
-                <img src="image/skull.png" alt="4">
+                <img src="image/img1.png" alt="Ana Görsel">
+                <img src="image/img2.png" alt="2">
+                <img src="image/img3.png" alt="3">
+                <img src="image/img4.png" alt="4">
             </div>           
         </div>
 
+        <p class="tagline">Websiteme Hoşgeldiniz. Size en güzel hizmeti sunmak için buradayım!</p>
         
-
-        <p class="tagline">Size en güzel hizmeti sunmak için buradayım!</p>
-        <a href="bilgiler.html" class="button">Beni Tanıyın</a>
 
         <div class="social-buttons">
             <a href="https://www.shopier.com/jaspersartcreative" target="_blank">
@@ -348,15 +367,16 @@
                 <p>Shopier</p>
             </a>
         </div>
+        <a href="bilgiler.html" class="button">Beni Tanıyın</a>
     </div>
     
 
     <footer>
-        <a href="yapımcılar.html" target="_blank">
-            <p>🖥️ Developed by JaspersArt</p>
-        </a>
-        <p>&copy; 2024 JaspersArt. Tüm hakları saklıdır.</p>
+        <p>🖥️ Developed by JaspersArt</p>
+    </a>
+    <p>&copy; 2024 JaspersArt. Tüm hakları saklıdır.</p>
     </footer>
+
     <script>  
 
         function toggleMenu() {
