@@ -167,6 +167,21 @@
             text-decoration: none;
         }
 
+        .arkarenk {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            width: 50%; 
+            height: 40%;
+            margin: 50px auto; 
+            padding: 20px;
+            border-radius: 50%;
+            box-shadow: 5px 15px rgb(59, 79, 109);
+            transition: transform 0.3s;
+            background-color: #a8c9e6;
+        }
+
         @media (max-width: 830px) {
             .hamburger {
                 display: block;
@@ -203,22 +218,34 @@
                 height: 80px;
             }
             
+            .banner-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 20px 0;
+            }
+
+            .banner {
+                width: 90%;
+                margin: 10px 0;
+            }
+
+            .arkarenk {
+                display: flex;
+                flex-direction: column; 
+                justify-content: center; 
+                align-items: center; 
+                width: 50%; 
+                height: 40%;
+                margin: 50px auto; 
+                padding: 20px;
+                border-radius: 1%;
+                box-shadow: 5px 15px rgb(59, 79, 109);
+                transition: transform 0.3s;
+                background-color: #a8c9e6;
+        }
         }
 
-        .arkarenk {
-            display: flex;
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            width: 50%; 
-            height: 40%;
-            margin: 50px auto; 
-            padding: 20px;
-            border-radius: 50%;
-            box-shadow: 5px 15px rgb(59, 79, 109);
-            transition: transform 0.3s;
-            background-color: #a8c9e6;
-        }
 
         .jasperstext{
             display: flex;
@@ -281,6 +308,19 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        @media (max-width: 620px) {
+            .jasperstext .text{
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            margin-top: 200px;
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Montserrat';
+        }
         }
             
     </style>
