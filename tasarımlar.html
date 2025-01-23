@@ -25,32 +25,42 @@
             letter-spacing: 5px;
         }
 
-        .gallery-container {
-            max-width: 800px;
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
-            display: grid;
-            flex-direction: column;
+            display: flex;
+            flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
         }
 
-        .gallery-container img {
-            width: 100%; 
-            height: auto; 
+        .embed {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 16 / 9;
+            position: relative;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .gallery-container img:hover {
-            transform: scale(1.05); 
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        .embed iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
-        
         @media (max-width: 768px) {
             h1 {
                 font-size: 40px;
+            }
+
+            .container {
+                padding: 10px; 
             }
         }
 
@@ -59,68 +69,52 @@
                 font-size: 30px;
                 letter-spacing: 2px;
             }
+        }
 
-            .gallery-container {
-                padding: 10px; 
-            }
+        h5 a{
+            font-size: 18px;
+        }
+        h5 a:hover{
+            color: rgb(105, 203, 216);
+            transition: all 0.4s;
         }
     </style>
 </head>
 <body>
 
-    <center><h1>TASARIMLAR</h1></center>
+    <center><h1>TASARIMLARIM</h1></center>
+    <center><h5><a href="fiyatlandırma.html">Satın almak isterseniz.</a></h5></center>
 
     <center>
-        <div class="gallery-container">
-            <img src="TASARIM/bionluks.png" alt="Tasarım 1">
-            <img src="TASARIM/T-bg2.png" alt="Tasarım">
-            <img src="TASARIM/titanyumBG.png" alt="Tasarım">
-            <img src="TASARIM/LORAdsg.png" alt="Tasarımbg3">
-            <img src="TASARIM/jarse.png" alt="Tasarım jr">
-            <img src="TASARIM/Q.png" alt="Tasarım Q">
-            <img src="TASARIM/QN.png" alt="Tasarım QN">
-            <img src="TASARIM/Blue_BG.png" alt="Tasarımbg">
-            <img src="TASARIM/1 (2).png" alt="Tasarım 2">
-            <img src="TASARIM/2.png" alt="Tasarım 3">
-            <img src="TASARIM/3.png" alt="Tasarım 4">
-            <img src="TASARIM/4.png" alt="Tasarım 5">
-            <img src="TASARIM/5.png" alt="Tasarım 6">
-            <img src="TASARIM/6.png" alt="Tasarım 7">
-            <img src="TASARIM/7.png" alt="Tasarım 8">
-            <img src="TASARIM/8.png" alt="Tasarım 9">
-            <img src="TASARIM/9.png" alt="Tasarım 10">
-            <img src="TASARIM/10.png" alt="Tasarım 11">
-            <img src="TASARIM/11.png" alt="Tasarım 12">
-            <img src="TASARIM/12.png" alt="Tasarım 13">
-            <img src="TASARIM/13.png" alt="Tasarım 14">
-            <img src="TASARIM/14.png" alt="Tasarım 15">
-            <img src="TASARIM/15.png" alt="Tasarım 16">
-            <img src="TASARIM/16.png" alt="Tasarım 17">
-            <img src="TASARIM/17.png" alt="Tasarım 18">
-            <img src="TASARIM/18.png" alt="Tasarım 19">
-            <img src="TASARIM/19.png" alt="Tasarım 20">
-            <img src="TASARIM/20.png" alt="Tasarım 21">
-            <img src="TASARIM/21.png" alt="Tasarım 22">
-            <img src="TASARIM/1a5.png" alt="Tasarım ekstra">
-            <img src="TASARIM/22.png" alt="Tasarım 23">
-            <img src="TASARIM/23.png" alt="Tasarım 24">
-            <img src="TASARIM/24.png" alt="Tasarım 25">
-            <img src="TASARIM/25.png" alt="Tasarım 26">
-            <img src="TASARIM/26.png" alt="Tasarım 27">
-            <img src="TASARIM/27.png" alt="Tasarım 28">
-            <img src="TASARIM/28.png" alt="Tasarım 29">
-            <img src="TASARIM/dark-moon-removed.png" alt="Tasarım 30">
-            <img src="TASARIM/30.png" alt="Tasarım 31">
-            <img src="TASARIM/31.png" alt="Tasarım 32">
-            <img src="TASARIM/32.png" alt="Tasarım 33">
-            <img src="TASARIM/33.png" alt="Tasarım 34">
-            <img src="TASARIM/34.png" alt="Tasarım 35">
-            <img src="TASARIM/35.png" alt="Tasarım 36">
-            <img src="TASARIM/36.png" alt="Tasarım 37">
-            <img src="TASARIM/HOPES.png" alt="Tasarım 37">
+        <div class="container">
+            
+            <div class="embed">
+                <iframe src="https://www.behance.net/embed/project/206952347?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            
+            <div class="embed">
+                <iframe src="https://www.behance.net/embed/project/216798159?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            
+            <div class="embed">
+                <iframe src="https://www.behance.net/embed/project/216424975?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            
+            <div class="embed">
+                <iframe src="https://www.behance.net/embed/project/217577273?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div class="embed">
+                <iframe src="https://www.behance.net/embed/project/206951639?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div class="embed">
+                <iframe src="https://www.behance.net/embed/project/206953781?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </div>
     </center>
 </body>
 </html>
-
-
