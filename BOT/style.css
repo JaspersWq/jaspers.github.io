@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --text-color: #E3E3E3;
+  --subheading-color: #828282;
+  --placeholder-color: #A6A6A6;
+  --primary-color: #242424;
+  --secondary-color: #383838;
+  --secondary-hover-color: #444;
+}
+
+body {
+  background: var(--primary-color);
+}
+
+.message-content {
+  margin-bottom: 25px;
+}
+
+.header, .sohbet .message, .yazım-alanı {
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+.header {
+  margin-top: 100px;
+  padding: 1rem;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.text-user{
+  background-color: #3b3a3a;
+  padding: 10px;
+  color: #E3E3E3;
+  border-radius: 5px;
+}
+
+body.hide-header .header {
+  margin: 0;
+  display: none;
+}
+
+.header :where(.baslik, .subtitle) {
+  color: var(--text-color);
+  font-weight: 500;
+  line-height: 4rem;
+}
+
+.header .baslik {
+  font-size: 3rem;
+  background-clip: text;
+  background: linear-gradient(to right, #356de7, #5088dd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header .altmetin{
+  color: var(--subheading-color);
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+
+.sohbet {
+  padding: 2rem 1rem 12rem;
+  max-height: 100vh;
+  overflow-y: auto;
+  scrollbar-color: #999 transparent;
+}
+
+.sohbet .message.incoming {
+  margin-top: 1.5rem;
+}
+
+.sohbet .message .message-content {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  align-items: center;
+}
+
+.sohbet .message .text {
+  color: var(--text-color);
+  white-space: pre-wrap;
+}
+
+.sohbet .message.error .text {
+  color: #e55865;
+}
+
+.sohbet .message.loading .text {
+  display: none;
+}
+
+.sohbet .message .avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  align-self: flex-start;
+}
+
+.sohbet .message.loading .avatar {
+  animation: rotate 3s linear infinite;
+}
+
+
+.sohbet .message .icon {
+  color: var(--text-color);
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  font-size: 1.25rem;
+  margin-left: 3.5rem;
+  visibility: hidden;
+}
+
+.sohbet .message .icon.hide {
+  visibility: hidden;
+}
+
+.sohbet .message:not(.loading, .error):hover .icon:not(.hide) {
+  visibility: visible;
+}
+
+.sohbet .message .icon:hover {
+  background: var(--secondary-hover-color);
+}
+
+/*-------- Animasyon ------*/
+
+.sohbet .message .loading-indicator {
+  display: none;
+  gap: 0.8rem;
+  width: 100%;
+  flex-direction: row;
+}
+
+.sohbet .message.loading .loading-indicator {
+  display: flex;
+}
+
+.sohbet .message .loading-indicator .loading-bar {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-position: -800px 0;
+  background: linear-gradient(to right, #4785f7, #47a8f7);
+  animation: loading 30s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: -800px 0;
+  }
+
+  100% {
+    background-position: 800px 0;
+  }
+}
+/*-------- Animasyon ------*/
+
+.mesaj-kutusu {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  background: var(--primary-color);
+}
+
+.mesaj-kutusu :where(.yazım-alanı, .action-buttons) {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.yazım-alanı .giris-yazı {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  position: relative;
+}
+
+.yazım-alanı .kutu-mesaj {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 1rem;
+  color: var(--text-color);
+  padding: 1.1rem 4rem 1.1rem 1.5rem;
+  border-radius: 100px;
+  background: var(--secondary-color);
+}
+
+.yazım-alanı .kutu-mesaj:focus {
+  background: var(--secondary-hover-color);
+}
+
+.yazım-alanı .kutu-mesaj::placeholder {
+  color: var(--placeholder-color);
+}
+
+.mesaj-kutusu .icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-color);
+  transition: 0.2s ease;
+}
+
+.mesaj-kutusu .icon:hover {
+  background: var(--secondary-hover-color);
+}
+
+.yazım-alanı #send-message-button {
+  position: absolute;
+  right: 0;
+  outline: none;
+  border: none;
+  transform: scale(0);
+  background: transparent;
+  transition: transform 0.2s ease;
+}
+
+.yazım-alanı .kutu-mesaj:valid ~ #send-message-button {
+  transform: scale(1);
+}
+
+.mesaj-kutusu .disclaimer-text {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: var(--placeholder-color);
+}
+
+
+@media (max-width: 768px) {
+  .header :is(.baslik, .subtitle) {
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+
+  .header .subtitle {
+    font-size: 1.7rem;
+  }
+
+  .mesaj-kutusu :where(.yazım-alanı, .action-buttons) {
+    gap: 0.4rem;
+  }
+
+  .yazım-alanı .giris-yazı {
+    height: 50px;
+  }
+
+  .yazım-alanı .kutu-mesaj {
+    padding: 1.1rem 3.5rem 1.1rem 1.2rem;
+  }
+
+  .mesaj-kutusu .icon {
+    height: 50px;
+    width: 50px;
+  }
+
+  .mesaj-kutusu .disclaimer-text {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+  }
+}
