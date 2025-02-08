@@ -6,6 +6,7 @@
     <title>Welcome</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=robot_2" />
     <link rel="shortcut icon" type="image/png" href="image/İMZALOGOO1.png">
     <style>
         * {
@@ -270,6 +271,35 @@
             font-size: 24px;
         }
 
+        .yardım-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #4b79a1;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .yardım-button:hover {
+            background-color: #92bbfa;
+            color: #283e51;
+            transform: scale(1.1);
+        }
+
+        .yardım-button .material-symbols-outlined {
+            font-size: 36px;
+        }
+
+
+
         @media (max-width: 833px) {
             .hamburger {
                 display: block;
@@ -342,7 +372,7 @@
                 <a href="bilgiler.html">Ana Sayfa</a>
                 <a href="tasarımlar.html">Tasarımlarım</a>
                 <a href="sosyal.html">Sosyal Medyalarım</a>
-                <a href="fiyatlandırma.html">Fiyat & Satış</a>
+                <a href="fiyatlandırma.html">Fiyat & Satış</a>  
             </div>
         </nav>
     </header>
@@ -369,8 +399,12 @@
         </div>
         <a href="bilgiler.html" class="button">Beni Tanıyın</a>
     </div>
-    
 
+    <a href="BOT/bot.html" target="_blank" class="yardım-button">
+        <span class="material-symbols-outlined">robot_2</span>
+    </a>
+    
+    
     <footer>
         <p>🖥️ Developed by JaspersArt</p>
     </a>
