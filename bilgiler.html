@@ -45,39 +45,12 @@
             margin-right: 10px;
         }
 
-        .logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 50px auto;
-        }
-
-        .logo img {
-            width: 150px;
-            height: 150px;
-            border-radius: 100%;
-        }
-
-        .logo h1 {
-            color: rgb(63, 62, 62);
-            font-size: 2rem;
-            margin-top: 20px;
-            margin: right 15px;
-            text-align: center;
-        }
-
-        .logo p {
-            text-align: center;
-            font-size: 25px;
-            color: #252525;
-            max-width: 600px;
-            margin-bottom: 50px;
-        }
 
         .banner-section {
             display: flex;
             justify-content: space-around;
             margin: 100px 0;
+            margin-right: 40px;
         }
 
         .banner {
@@ -168,20 +141,7 @@
             text-decoration: none;
         }
 
-        .arkarenk {
-            display: flex;
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            width: 50%; 
-            height: 40%;
-            margin: 50px auto; 
-            padding: 20px;
-            border-radius: 50%;
-            box-shadow: 5px 15px rgb(59, 79, 109);
-            transition: transform 0.3s;
-            background-color: #a8c9e6;
-        }
+        
 
         @media (max-width: 830px) {
             .hamburger {
@@ -231,20 +191,19 @@
                 margin: 10px 0;
             }
 
-            .arkarenk {
+            .kutular{
                 display: flex;
-                flex-direction: column; 
-                justify-content: center; 
-                align-items: center; 
-                width: 50%; 
-                height: 40%;
-                margin: 50px auto; 
-                padding: 20px;
-                border-radius: 1%;
-                box-shadow: 5px 15px rgb(59, 79, 109);
-                transition: transform 0.3s;
-                background-color: #a8c9e6;
-        }
+                flex-direction: column;
+                align-items: center;
+                margin: 200px 0;
+            }
+
+            .kutu{
+                width: 100%;
+                height: 100px;
+                margin-bottom: 50%;
+            }
+            
         }
 
 
@@ -338,7 +297,38 @@
             font-size: 36px;
         }
 
-        @media (max-width: 620px) {
+        .kutu-text{
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            font-size: 70px;
+            font-family: 'Montserrat';
+        }
+
+        .kutular{
+            display: flex;
+            justify-content: space-around;
+            margin: 200px 0;
+            width: 100%;
+        }
+
+        .kutu{
+            width: 35%;
+            height: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            padding: 40px;
+        }
+
+        .kutu h1{
+            margin-bottom: 20px;
+        }
+        .kutu p{
+            color: #929292;
+            font-size: 18px;
+        }
+
+        @media (max-width: 720px) {
             .jasperstext .text{
             display: flex;
             flex-direction: column; 
@@ -348,6 +338,15 @@
             text-align: center;
             font-size: 30px;
             font-family: 'Montserrat';
+        }
+
+        .kutu{
+                width: 110%;
+                height: 100px;
+                margin-bottom: 50%;
+            }
+        .kutu-text{
+            font-size: 60px;
         }
         }
             
@@ -378,15 +377,27 @@
         </div>
     </div><hr>
 
-    
-        <div class="logo">
-            <img src="image/Profil.png" alt="Logo">
-            <div class="arkarenk">
-            <h1>JaspersArt</h1>
-            <p>Ben Enes. Lisede Bilişim Teknolojileri alanında okuyorum. 5 yıldır grafik tasarım alanında müşterilerime çeşitli logo, banner, sosyal medya, manipülasyon tasarım hizmeti verdim. Aynı zamanda web sitesi ve program geliştirmekteyim.</p>
+    <h1 class="kutu-text">Beni Neden Seçmelisiniz?</h1>
+    <div class="kutular">
+
+        <div class="kutu">
+            <h1>Deneyim</h1>
+            <p>5 yıllık deneyimim ve tecrübelerim ile markanızın ruhunu iyi yansıtacak tasarımlar yapma yeteneğime güveniyorum. Kişiler, topluluklar ve şirketler için çeşitli logo ve kurumsal kimlik tasarımları yaptım.  </p>
         </div>
+
+        <div class="kutu">
+            <h1>Müşteri Memnuniyeti</h1>
+            <p>Müşterilerin memnuniyeti ve istekleri benim için oldukça önemlidir. Müşterilerle iyi bir iletişim kurmak ve tasarımı iyi anlamak önemlidir. Tasarımlarımda her zaman buna dikkat ederim ve müşteri ihtiyaçlarına göre özenle çalışırım. </p>
         </div>
+
+        <div class="kutu">
+            <h1>Profesyonel Hizmet</h1>
+            <p>Çalışma hakkında detaylı brief alarak işe başlarım. Müşterilerim eğer kararsız ise onları bilgilendirir, tasarım seçimleri konusunda destek sağlarım. Yaptığım logoları varyasyonlu şekilde müşterilere verip onlara seçim hakkı sunarım.</p>
+        </div>
+
     </div><hr>
+            
+    
 
 
     <div class="banner-section">
@@ -433,7 +444,7 @@
         
    
     document.addEventListener("DOMContentLoaded", function () {
-        const fadeElements = document.querySelectorAll("header, .logo, .arkarenk, .banner, footer");
+        const fadeElements = document.querySelectorAll("header, .logo, .kutular, .kutu-text, .kutu, .banner");
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
