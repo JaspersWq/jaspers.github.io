@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SİPARİŞ</title>
+    <link rel="shortcut icon" type="image/png" href="image/icons.png">
+    <title>Sipariş Formu</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
         body {
             font-family: 'Arial', sans-serif;
             background-color: #212121; 
@@ -16,10 +19,21 @@
             padding: 20px;
         }
 
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 2s ease-out, transform 2s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .form-container {
-            width: 400px;
+            width: 80%;
             background: linear-gradient(#212121, #212121) padding-box,
-                        linear-gradient(140deg, transparent 35%,#e81cff, #40c9ff) border-box;
+                        linear-gradient(140deg, transparent 35%,#1c6bff, #40c9ff) border-box;
             border: 2px solid transparent;
             padding: 40px 24px;
             font-size: 14px;
@@ -100,12 +114,12 @@
 
         .form-container .form-group input:focus {
             outline: none;
-            border-color: #1c91ff;
+            border-color: #ececec;
         }
 
         .form-container .form-group textarea:focus {
             outline: none;
-            border-color: #1c91ff;
+            border-color: #ececec;
         }
 
         .form-container .form-submit-btn {
@@ -130,6 +144,14 @@
         .form-container .form-submit-btn:hover {
             background-color: #fff;
             border-color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .form-container h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 35px;
+            text-align: center;
+
         }
 
         @media (max-width: 768px) {
@@ -151,12 +173,12 @@
             
             <div class="form-group">
                 <label for="designType">Hizmet Türü:</label>
-                <input type="text" id="designType" placeholder="Logo, Banner, Website vb." required>
+                <input type="text" id="designType" placeholder="Logo, Banner, Kartvizit tasarımı vb." required>
             </div>
             
             <div class="form-group">
-                <label for="purpose">Tasarım Nerede Kullanılacak:</label>
-                <input type="text" id="purpose" placeholder="Tasarımın nerede kullanılacağını belirtin" required>
+                <label for="purpose">Tasarımın kullanılacağı Alan:</label>
+                <input type="text" id="purpose" placeholder="Tasarımın kullanılacağı alan. (Web site logosu vs.)" required>
             </div>
             
             <div class="form-group">
@@ -166,6 +188,7 @@
             
             <button type="submit" class="form-submit-btn">Sipariş Mesajını Gönder</button>
         </form>
+        <p>Eğer aklınızda soru var ise JasBot'a sorabilirsiniz. <a target="_blank" style="color: rgb(98, 113, 247);" href="BOT/bot.html">buraya tıklayın!</a></p>
     </div>
 
     <script>
@@ -174,7 +197,7 @@
             var designType = document.getElementById('designType').value;
             var purpose = document.getElementById('purpose').value;
             var details = document.getElementById('details').value;
-
+    
             var subject = encodeURIComponent('Yeni Sipariş isteği: ' + name);
             var body = encodeURIComponent(
                 "İsim: " + name + "\n" +
@@ -182,10 +205,27 @@
                 "Tasarım Amacı: " + purpose + "\n" +
                 "Tasarım Detayları: " + details
             );
-
+    
             var mailtoLink = "mailto:ekicienes06@gmail.com?subject=" + subject + "&body=" + body;
             window.location.href = mailtoLink;
         }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".form-container, .form-group, .form-submit-btn, p");
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+    
+            fadeElements.forEach((el) => {
+                el.classList.add("fade-in");
+                observer.observe(el);
+            });
+        });
     </script>
 
 </body>
