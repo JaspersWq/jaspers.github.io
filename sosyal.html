@@ -7,7 +7,7 @@
     <title>Sosyal Medyalarım</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
+   <style>
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f0f0f0;
@@ -28,6 +28,9 @@
         .social-buttons {
             display: flex;
             justify-content: center;
+            width: 100%;
+            align-items: center;
+            flex-direction: column;
             gap: 30px;
             margin: 50px 0;
         }
@@ -46,9 +49,29 @@
             transition: all 0.3s ease;
         }
 
-        .social-buttons a:hover {
+        .social-buttons .instagram a:hover {
             transform: scale(1.2);
-            background-color: #69c6fc;
+            background-color: #fc7369;
+        }
+
+        .social-buttons .behance a:hover {
+            transform: scale(1.2);
+            background-color: #4a65fa;
+        }
+
+        .social-buttons .linkedin a:hover {
+            transform: scale(1.2);
+            background-color: #97c4ff;
+        }
+
+        .social-buttons .discord a:hover {
+            transform: scale(1.2);
+            background-color: #738bfa;
+        }
+
+        .social-buttons .github a:hover {
+            transform: scale(1.2);
+            background-color: #1f1f1f;
         }
 
         
@@ -87,24 +110,39 @@
     <h1>Sosyal Medya Hesaplarım</h1>
 
     <div class="social-buttons">
-        <a href="https://www.instagram.com/jaspers_artz/" target="_blank" class="instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.behance.net/zgenurekici" target="_blank" class="behance">
-            <i class="fab fa-behance"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/enes-ekici-0449ba255/" target="_blank" class="linkedin">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://discord.gg/8btjygjWB8" target="_blank" class="discord">
-            <i class="fab fa-discord"></i>
-        </a>
+        <div class="instagram">
+            <a href="https://www.instagram.com/jaspers_artz/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <div class="behance">
+            <a href="https://www.behance.net/zgenurekici" target="_blank">
+                <i class="fab fa-behance"></i>
+            </a>
+        </div>
+
+        <div class="linkedin">
+            <a href="https://www.linkedin.com/in/enes-ekici-0449ba255/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+
+        <div class="discord">
+            <a href="https://discord.gg/8btjygjWB8" target="_blank">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+
+        <div class="github">
+            <a href="https://github.com/JaspersWq" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
     </div>
 
     <footer>
-            <a href="yapımcılar.html" target="_blank">
-            <p>🖥️ Developer by JaspersArt</p>
-            </a>
+            <p> Developed by JaspersArt</p>
         <p>&copy; 2024 JaspersArt. Tüm hakları saklıdır.</p>
     </footer>
 
