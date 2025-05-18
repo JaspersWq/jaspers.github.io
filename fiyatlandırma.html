@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -81,66 +82,78 @@
         }
 
         .banner {
-            padding: 25px;
-            gap: 10px;
+            padding: 30px;
             margin-top: 70px;
             margin-bottom: 70px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 16px;
+            background: linear-gradient(145deg, #ffffff, #eff6ff);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            position: relative;
         }
 
         .banner h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #1a1a1a;
+            font-size: 1.9rem;
+            margin-bottom: 15px;
+            color: #0d1b2a;
         }
 
         .banner p {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 25px;
             line-height: 1.6;
         }
 
+        .details ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .details li {
+            margin-bottom: 6px;
+            list-style-type: "✓  ";
+            color: #333;
+            font-size: 0.97rem;
+        }
+
         .price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #009688;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background-color: #4bce97;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
             margin-bottom: 20px;
         }
 
-        .details {
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.5;
-        }
-
         .button {
-            background-color: #39cec1;
+            background-color: #3b82f6;
             color: #fff;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 24px;
+            border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
             text-decoration: none;
             align-self: flex-start;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .button:hover {
-            background-color: #6aaca6;
-            transition: all 0.3s ease;
+            background-color: #2563eb;
+            transform: translateY(-2px);
         }
 
         .button a {
             color: #fff;
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.2rem;
+            font-family: "Poppins", sans-serif;
+            font-size: 1rem;
             text-decoration: none;
         }
 
@@ -235,7 +248,7 @@
         <div class="banner">
             <h3>Kurumsal Logo Tasarımı</h3>
             <p>Şirketiniz veya kişisel olmak üzere kaliteli logo tasarlıyorum. Logonuz isteklerinize göre yapılmaktadır.</p>
-            <div class="details">Özellikler:
+            <div class="details"><b>Özellikler:</b>
                 <ul>
                     <li>Farklı tasarım seçenekleri</li>
                     <li>Yüksek çözünürlük</li>
@@ -244,7 +257,7 @@
                 </ul>
             </div>
             <div class="price">Başlangıç Fiyatı: ₺2000</div>
-            <div class="price">Logo animasyon + ₺600</div>
+            <div class="price">Logo animasyon + ₺700</div>
             <div class="price">Kartvizit tasarımı + ₺700</div>
             <div class="button">
                 <a href="sipariş.html">Sipariş Ver</a>
@@ -254,7 +267,7 @@
         <div class="banner">
             <h3>Youtube & Twitch Banner</h3>
             <p>Youtube, twitch ve diğer platformlar için dikkat çekici bannerlar, headerlar tasarlayabilirim.</p>
-            <div class="details">Özellikler:
+            <div class="details"><b>Özellikler:</b>
                 <ul>
                     <li>3 revize hakkı</li>
                     <li>PNG, JPG ve Kaynak dosyaları</li>
@@ -271,14 +284,14 @@
         <div class="banner">
             <h3>Sosyal Medya Tasarımı</h3>
             <p>Sosyal medya hesaplarınıza ürün tanıtım tasarımları ve diğer post tasarımları yapabilirim.</p>
-            <div class="details">Özellikler:
+            <div class="details"><b>Özellikler:</b>
                 <ul>
                     <li>3 revize hakkı</li>
                     <li>Renk ve tema seçimi</li>
                     <li>PNG, JPG ve Kaynak dosyaları</li>
                 </ul>
             </div>
-            <div class="price">₺500 - 700</div>
+            <div class="price">Başlangıç Fiyatı: ₺500</div>
             <div class="button">
                 <a href="sipariş.html">Sipariş Ver</a>
             </div>
@@ -287,7 +300,7 @@
         <div class="banner">
             <h3>Fotoğraf Manipülasyon Tasarımı</h3>
             <p>Görseller ile çeşitli profesyonel manipülasyon tasarımları yaparım. Çok sayıda fotoğrafın manipüle edilmesiyle yapılan tasarımlardır.</p>
-            <div class="details">Özellikler:
+            <div class="details"><b>Özellikler:</b>
                 <ul>
                     <li>3 revize hakkı</li>
                     <li>Yüksek çözünürlük</li>
@@ -307,7 +320,7 @@
          <div class="banner">
             <h3>Fotoğraf Rötuş & Dekupe</h3>
             <p>Fotoğraflarınızı düzenleyebilir ve iyileştirebilirim.</p>
-            <div class="details">Özellikler:
+            <div class="details"><b>Özellikler:</b>
                 <ul>
                     <li>3 revize hakkı</li>
                     <li>Fotoğraflarınız istediğiniz şekilde iyileştirilir ve düzenlenir</li>
